@@ -8,6 +8,8 @@ const EditAuthor = (props)=> {
     const [author, setAuthor] = useState("");
     const [name, setName] = useState("")
 
+    const [errors, setErrors] = useState({});
+
     const navigate = useNavigate();
 
     const {id} = useParams();
@@ -39,6 +41,10 @@ const EditAuthor = (props)=> {
             })
             .catch ((err)=>{
                 console.log(err);
+                console.log("err.response", err.response);
+                console.log("err.response.data", err.response.data);
+                console.log("err.response.data.errors", err.response.data.errors);
+                setErrors(err.response.data.errors);
             })
     }
 
@@ -52,11 +58,11 @@ const EditAuthor = (props)=> {
             <form onSubmit={submitHandler}>
                 <label>Name:</label>
                 <input value={name} onChange={(e)=>setName(e.target.value)} type="text" />
-                    {/* {
+                    {
                         errors.name?
                         <p>{errors.name.message}</p>
                         :null
-                    } */}
+                    }
                 <button>Save Changes</button>
                 <button><Link to="/">Cancel</Link></button>
             </form>

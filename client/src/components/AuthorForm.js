@@ -24,10 +24,10 @@ const AuthorForm = (props)=> {
         })
         .catch ((err)=>{
             console.log(err);
-            // console.log("err.response", err.response);
-            // console.log("err.response.data", err.response.data);
-            // console.log("err.response.data.errors", err.response.data.errors);
-            // setErrors(err.response.data.errors);
+            console.log("err.response", err.response);
+            console.log("err.response.data", err.response.data);
+            console.log("err.response.data.errors", err.response.data.errors);
+            setErrors(err.response.data.errors);
         })
     }
 

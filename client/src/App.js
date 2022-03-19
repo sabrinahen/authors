@@ -16,7 +16,7 @@ function App() {
         <Route element={<AuthorForm />} path="/authors/new" />
         <Route element={<DisplayOneAuthor />} path="/authors/:id" />
         <Route element={<EditAuthor />} path="/authors/edit/:id" />
-        <Route element={< NotFound />} path="*" />
+        <Route element={< NotFound />} path="/error" />
       </Routes>
     </div>
     </BrowserRouter>

@@ -34,7 +34,7 @@ module.exports = {
             })
             .catch((err)=>{
                 console.log("findOneAuthor has failed!");
-                res.json({message: "Something went wrong with findOneAuthor", error: err})
+                res.status(400).json(err)
             })
     },
 
